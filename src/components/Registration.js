@@ -1,11 +1,11 @@
 import "./Registration.css";
-import { FaUser, FaLock,FaUserSecret, FaPhoneAlt } from 'react-icons/fa';
+import { FaUser, FaLock, FaUserSecret, FaPhoneAlt } from 'react-icons/fa';
 import { MdEmail, MdDriveFileRenameOutline } from 'react-icons/md'
 import React, { useRef, useState, useEffect } from "react";
 
 
 export default function App() {
-  
+
   const containerRef = useRef(null);
 
   function sign_up_btn() {
@@ -32,7 +32,7 @@ export default function App() {
 
           {/* username */}
           <div className="input-field">
-            <FaUser className="i"/>
+            <FaUser className="i" />
             <input
               type="text"
               placeholder="Username"
@@ -41,11 +41,11 @@ export default function App() {
 
           {/* password */}
           <div className="input-field">
-            <FaLock className="i"/>
+            <FaLock className="i" />
             <input type="password" placeholder="Password" />
           </div>
           <input type="submit" value="Login" className="btn" />
-         
+
           <p className="account-text">
             Don't have an account?{" "}
             <a href="#" id="sign-up-btn2" onClick={() => sign_up_btn2()}>
@@ -78,23 +78,23 @@ export default function App() {
 
           {/* full name */}
           <div className="input-field">
-            < MdDriveFileRenameOutline className="i -scale" />
+            < MdDriveFileRenameOutline className="i --scale" />
             <input type="text" placeholder="Full name" ></input>
           </div>
 
           {/* phone */}
           <div className="input-field">
-            <FaPhoneAlt className="i -scale" />
+            <FaPhoneAlt className="i" />
             <input type="text" placeholder="Phone number" pattern="/(7|8|9)\d{9}/" ></input>
           </div>
 
           {/* id */}
           <div className="input-field">
-          <FaUserSecret className="i" />
+            <FaUserSecret className="i -scale" />
             <input type="text" placeholder="Id" ></input>
           </div>
 
-            {/* password */}
+          {/* password */}
           <div className="input-field">
             <FaLock className="i" />
             <input type="password" placeholder="Password" />
@@ -133,13 +133,12 @@ export default function App() {
             <h3>New to CTD?</h3>
             <p>
               Come join us on a wonderful journey on learning and collaborating to build new world!
-              Let's go !!! 
+              Let's go !!!
             </p>
             <button
               className="btn"
               id="sign-up-btn"
-              onClick={() => sign_up_btn()}
-            >
+              onClick={() => sign_up_btn()}>
               Sign up
             </button>
           </div>
