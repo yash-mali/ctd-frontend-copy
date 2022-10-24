@@ -5,33 +5,8 @@ import React, { useRef, useState, useEffect } from "react";
 
 
 export default function App() {
-  // const [userDetails,setUserDetails] = useState({userName : "",email:"",name:"",id:"", phone : ""})
+  
   const containerRef = useRef(null);
- 
-  const [userName, setUserName] = useState("");
-  const [email, setEmail] = useState("");
-
-  const userDetails = {
-    userName: userName,
-    email: email
-  };
-
-  const handleChange = (e) => setUserName(e.target.value)
-
-  useEffect(() => {
-    const data = localStorage.getItem("userDetails");
-    if (data) {
-      const parseDataObject = JSON.parse(data);
-      setUserName(parseDataObject.userName);
-      setEmail(parseDataObject.email);
-    }
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem("userDetails", JSON.stringify(userDetails));
-  });
-
-
 
   function sign_up_btn() {
     containerRef.current.classList.add("sign-up-mode");
@@ -54,15 +29,17 @@ export default function App() {
       <div className="signin-signup">
         <form action="" className="sign-in-form">
           <h2 className="title">Sign in</h2>
+
+          {/* username */}
           <div className="input-field">
             <FaUser className="i"/>
             <input
               type="text"
               placeholder="Username"
-              value={userName}
-              onChange={handleChange}
             />
           </div>
+
+          {/* password */}
           <div className="input-field">
             <FaLock className="i"/>
             <input type="password" placeholder="Password" />
@@ -76,6 +53,9 @@ export default function App() {
             </a>
           </p>
         </form>
+
+        {/* sign up form  */}
+
         <form action="" class="sign-up-form -rescale">
           <h2 className="title">Sign up</h2>
           <div className="input-field">
@@ -83,8 +63,6 @@ export default function App() {
             <input
               type="text"
               placeholder="Username"
-              value={userName}
-              onChange={handleChange}
             />
           </div>
 
@@ -94,8 +72,6 @@ export default function App() {
             <input
               type="text"
               placeholder="Email"
-              value={email}
-              onChange={handleChange}
               pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"
             />
           </div>
@@ -103,19 +79,19 @@ export default function App() {
           {/* full name */}
           <div className="input-field">
             < MdDriveFileRenameOutline className="i -scale" />
-            <input type="text" placeholder="Full name" onChange={handleChange} ></input>
+            <input type="text" placeholder="Full name" ></input>
           </div>
 
           {/* phone */}
           <div className="input-field">
             <FaPhoneAlt className="i -scale" />
-            <input type="text" placeholder="Phone number" pattern="/(7|8|9)\d{9}/"  onChange={handleChange}></input>
+            <input type="text" placeholder="Phone number" pattern="/(7|8|9)\d{9}/" ></input>
           </div>
 
           {/* id */}
           <div className="input-field">
           <FaUserSecret className="i" />
-            <input type="text" placeholder="Id" onChange={handleChange}></input>
+            <input type="text" placeholder="Id" ></input>
           </div>
 
             {/* password */}
@@ -126,8 +102,6 @@ export default function App() {
 
           {/* submit */}
           <input type="submit" value="Sign up" className="btn" />
-
-         
 
           <p className="account-text">
             Already have an account?{" "}
