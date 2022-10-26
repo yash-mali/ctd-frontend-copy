@@ -1,5 +1,5 @@
 import "./Registration.css";
-import { FaUser, FaLock, FaUserSecret, FaPhoneAlt } from 'react-icons/fa';
+import { FaUser, FaLock, FaUserSecret, FaPhoneAlt, FaGoogle } from 'react-icons/fa';
 import { MdEmail, MdDriveFileRenameOutline } from 'react-icons/md'
 import React, { useRef, useState } from "react";
 
@@ -49,6 +49,7 @@ export default function App() {
               {isClicked ? "Set password" : "Sign in"}
             </a>
           </p>
+
           <p className="account-text">
             Don't have an account?{" "}
             <a href="#" id="sign-up-btn2" onClick={sign_up_btn2}>
@@ -58,12 +59,21 @@ export default function App() {
             {isClicked ? "Forgot" : "Have"} password?{" "}
             <a href="#" onClick={() => setClicked(!isClicked)}>{isClicked ? "Set Password" : "Sign in"}</a>
           </p>
+
+          <p className="social-text">Or Sign in with social platform</p>
+          <div className="social-media">
+            <a href="#" className="social-icon">
+              <FaGoogle className="i"/>
+            </a>
+          </div>
+ 
         </form>
 
         {/* sign up form  */}
 
         <form action="" class="sign-up-form -rescale">
           <h2 className="title">Sign up</h2>
+
           <div className="input-field">
             <FaUser className="i" />
             <input
@@ -115,8 +125,10 @@ export default function App() {
               Sign in
             </a>
           </p>
+
         </form>
       </div>
+
       <div className="panels-container">
         <div className="panel left-panel">
           <div className="content">
@@ -125,13 +137,7 @@ export default function App() {
               Great!!! you are a member now
               Come on board we are waiting for you ...
             </p>
-            <button
-              className="btn"
-              id="sign-in-btn"
-              onClick={sign_in_btn}
-            >
-              Sign in
-            </button>
+            <button className="btn" id="sign-in-btn" onClick={sign_in_btn}>Sign in</button>
           </div>
         </div>
         <div className="panel right-panel">
@@ -141,12 +147,7 @@ export default function App() {
               Come join us on a wonderful journey on learning and collaborating to build new world!
               Let's go !!!
             </p>
-            <button
-              className="btn"
-              id="sign-up-btn"
-              onClick={sign_up_btn}>
-              Sign up
-            </button>
+            <button className="btn" id="sign-up-btn" onClick={sign_up_btn}> Sign up </button>
           </div>
         </div>
       </div>
